@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 800" fill="none">
+<defs>
+ <linearGradient id="sky" x2="0" y2="800" gradientUnits="userSpaceOnUse"><stop stop-color="#a39179"/><stop offset=".45" stop-color="#d1b68d"/><stop offset="1" stop-color="#81674c"/></linearGradient>
+ <linearGradient id="sand" x2="0" y2="800" gradientUnits="userSpaceOnUse"><stop stop-color="#b79a6f"/><stop offset="1" stop-color="#65543b"/></linearGradient>
+ <g id="cactus"><path fill="#59694e" d="M-8-59h16V35H-8zM-35-25h13V3h22v12h-35zM23-42h13V-6H0v-12h23z"/><path fill="#788564" d="M-8-59h6V35H-8zM-35-25h5V15h-5z"/></g>
+ <g id="gem"><path fill="#d8d7a1" d="m0-28 23 13v28L0 27-23 13v-28z"/><path fill="#b9c58d" d="m0-28 23 13L0 0-23-15z"/><path fill="#859769" d="M0 0v27l23-14v-28z"/><path fill="#edf0bf" d="M-23-15 0 0v27l-23-14z"/></g>
+ <g id="crate"><path fill="#b18b59" d="M0 0h58v58H0z"/><path fill="#725839" d="M5 5h48v48H5z"/><path stroke="#b29462" stroke-width="6" d="m7 7 44 44M51 7 7 51"/><path fill="#d1ae73" d="M0 0h58v5H0z"/></g>
+</defs>
+<path fill="url(#sky)" d="M0 0h960v800H0z"/>
+<circle cx="710" cy="149" r="86" fill="#e6d6aa"/>
+<g fill="#e9d7b2" opacity=".35"><path d="M58 125h121v12h67v13H20v-13h38zM345 63h89v12h66v13H303V75h42z"/></g>
+<path fill="#b39a7c" d="M0 328h76v-87h90v-47h63v151h108v-74h75v-42h92v130h111v-92h124v48h109v-61h112v339H0z"/>
+<path fill="#9b8161" d="M0 411h103v-81h97v42h108v-57h84v92h194v-64h76v-73h109v139h99v-69h90v253H0z"/>
+<path fill="url(#sand)" d="M0 436h960v364H0z"/>
+<path fill="#c2a67e" d="m84 481 379-148 389 143-371 180z"/>
+<path fill="#8d754f" d="m84 481 397 175v28L84 509z"/>
+<path fill="#a38b5f" d="m481 656 371-180v29L481 684z"/>
+<path stroke="#e2c896" stroke-width="3" stroke-opacity=".55" d="m135 482 329-128 335 123-318 155z"/>
+<path stroke="#cdb587" stroke-opacity=".4" d="m218 449 380 145M324 407l381 137M210 536l352-145M332 590l353-150"/>
+<path fill="#b99c70" d="m335 459 130-50 128 52-128 58z"/>
+<path fill="#685c43" d="M335 459v82l130 59v-81z"/>
+<path fill="#8b7850" d="m465 519 128-58v81l-128 58z"/>
+<path fill="#d0ba88" d="m335 459 130-50 128 52-128 58z"/>
+<path fill="#8c7950" d="m399 410 68-28 63 28v57l-64 30-67-30z"/>
+<path fill="#dac794" d="m399 410 68-28 63 28-64 31z"/>
+<path fill="#6f6646" d="M399 410v57l67 30v-56z"/>
+<use href="#gem" transform="translate(466 360) scale(1.5)"/>
+<g stroke="#e6d8a4" stroke-width="3"><path d="M466 288v-20M514 312l16-12M418 312l-16-12M531 351h18M401 351h-18"/></g>
+<path fill="#d7bb85" d="m548 551 71-32 40 18-73 34z"/>
+<path fill="#9d855c" d="M548 551v17l38 19v-16z"/>
+<path fill="#7e6c48" d="m586 571 73-34v17l-73 33z"/>
+<path fill="#d7bb85" d="m592 580 71-32 40 18-73 34z"/>
+<path fill="#9d855c" d="M592 580v17l38 19v-16z"/>
+<path fill="#7e6c48" d="m630 600 73-34v17l-73 33z"/>
+<path fill="#d7bb85" d="m635 608 71-32 40 18-73 34z"/>
+<path fill="#9d855c" d="M635 608v17l38 19v-16z"/>
+<path fill="#7e6c48" d="m673 628 73-34v17l-73 33z"/>
+<use href="#crate" transform="translate(239 392) scale(.9)"/><use href="#crate" transform="translate(197 433) scale(.9)"/>
+<use href="#crate" transform="translate(673 401) scale(.9)"/>
+<use href="#cactus" transform="translate(113 401) scale(1.4)"/><use href="#cactus" transform="translate(838 412) scale(1.3)"/><use href="#cactus" transform="translate(60 598) scale(1.3)"/>
+<g transform="translate(718 329)"><path stroke="#65553d" stroke-width="5" d="M0-46v98"/><path fill="#a67e57" d="M0-46h67L54-24 67-4H0z"/><path fill="#dec28b" d="m30-36 5 10 11 1-8 7 2 11-10-5-10 5 2-11-8-7 11-1z"/></g>
+<g transform="translate(321 547)"><ellipse cy="38" rx="20" ry="7" fill="#514c36" opacity=".5"/><path fill="#6b5540" d="M-11-30h22v19h-22z"/><path fill="#d8b880" d="M-8-19H8V-4H-8z"/><path fill="#aa7953" d="M-15-4h30v28h-30z"/><path fill="#d7b875" d="M-15 2h30v6h-30z"/><path fill="#514c36" d="M-10 24h7v15h-7zM3 24h7v15H3z"/></g>
+<g fill="#d5bc8a" opacity=".65"><path d="M88 523h9v4h-9zM148 576h8v4h-8zM776 555h10v4h-10zM815 599h8v4h-8zM551 672h10v4h-10z"/></g>
+<path fill="#655640" d="m0 703 142-69 128 63 45 103H0zM960 657l-111-27-109 94-40 76h260z"/>
+<use href="#cactus" transform="translate(863 687) scale(1.7)"/>
+<path stroke="#f3dbb2" stroke-opacity=".2" d="M24 24h912v752H24z"/>
+</svg>

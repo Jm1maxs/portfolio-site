@@ -1,0 +1,93 @@
+/* Motion is progressive enhancement: no content is hidden by default. */
+@media (prefers-reduced-motion: no-preference) {
+  .showcase__ambient {
+    animation: forest-breathe 4.5s ease-in-out both;
+    transform-origin: 75% 35%;
+  }
+  @keyframes forest-breathe {
+    0%, 100% { opacity: .7; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.04); }
+  }
+
+  .nav__links a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 4px;
+    width: 16px;
+    height: 2px;
+    background: var(--accent);
+    transform: scaleX(0);
+    transform-origin: left center;
+    transition: transform .25s ease;
+  }
+  .nav__links a:is(:hover, :focus-visible, .is-active)::after { transform: scaleX(1); }
+  .nav__brand-mark, .nav__cta > span, .showcase__contact > span,
+  .project-dock__arrow, .btn > span:last-child,
+  .project-cover__cta > span, .world-card__play > span:last-child {
+    display: inline-block;
+    transition: transform .3s var(--ease);
+  }
+  .btn:active, .nav__cta:active { transform: translateY(1px); }
+  .project-dock__item { transition: border-color .3s, background .3s, transform .3s var(--ease); }
+  .project-cover, .world-card { transition: border-color .4s, box-shadow .4s; }
+  .project-cover > img, .world-card__art { transition: transform .75s var(--ease); }
+  .project-cover__caption, .world-card__caption { transition: transform .5s var(--ease); }
+  .project-cover__cta i, .world-card__play > span:first-child {
+    transition: background .3s, color .3s, border-color .3s, transform .3s var(--ease);
+  }
+  .strength-card__top svg { transition: transform .4s var(--ease); }
+
+  /* Pointer light stays subtle and never covers the text or catches clicks. */
+  .project-cover::after, .world-card::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    border-radius: inherit;
+    background: radial-gradient(circle at var(--light-x, 50%) var(--light-y, 40%), #f4f1c514, transparent 48%);
+    opacity: 0;
+    transition: opacity .5s;
+  }
+  .project-cover:focus-visible, .world-card:focus-visible {
+    box-shadow: 0 0 0 4px #c3e6a214;
+  }
+  .project-cover:focus-visible .project-cover__cta > span,
+  .world-card:focus-visible .world-card__play > span:last-child { transform: translate(3px, -3px); }
+
+  @media (hover: hover) and (pointer: fine) {
+    .project-cover.is-exploring > img,
+    .world-card.is-exploring .world-card__art {
+      transform: scale(1.045) translate(var(--art-x, 0px), var(--art-y, 0px));
+    }
+    .project-cover.is-exploring::after, .world-card.is-exploring::after { opacity: 1; }
+    .project-cover:hover, .world-card:hover { box-shadow: 0 16px 38px #0002; }
+    .project-cover:hover .project-cover__caption, .world-card:hover .world-card__caption { transform: translateY(-4px); }
+    .project-cover:hover .project-cover__cta i, .world-card:hover .world-card__play > span:first-child { transform: scale(1.07); }
+    .project-cover:hover .project-cover__cta > span,
+    .world-card:hover .world-card__play > span:last-child,
+    .nav__cta:hover > span, .showcase__contact:hover > span,
+    .btn:hover > span:last-child, .project-dock__item:hover .project-dock__arrow { transform: translate(3px, -3px); }
+    .project-dock__item:hover { transform: translateY(-3px); }
+    .nav__brand:hover .nav__brand-mark { transform: rotate(-4deg); }
+    .strength-card:hover .strength-card__top svg { transform: translateY(-3px) rotate(-4deg); }
+  }
+
+  @media (max-width: 820px) {
+    .nav__links.is-open { animation: menu-arrive .22s var(--ease) both; }
+    @keyframes menu-arrive {
+      from { opacity: 0; transform: translateY(-6px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  }
+}
+
+@media (hover: none), (pointer: coarse) {
+  .project-cover:hover > img, .world-card:hover .world-card__art { transform: none; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .showcase__ambient, .project-cover__caption, .world-card__caption,
+  .project-cover > img, .world-card__art, .project-dock__item,
+  .nav__links.is-open { animation: none !important; transition: none !important; transform: none !important; }
+  .project-cover::after, .world-card::after { display: none; }
+}

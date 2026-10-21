@@ -1,0 +1,34 @@
+export const projectVisuals = {
+  'campus-life': {
+    image: import.meta.env.BASE_URL + 'art/campus-world.svg',
+    alt: '暮色校园、教学楼与像素角色的主题插画',
+    title: 'My Campus', accent: 'L.I.F.E.',
+    category: '独立游戏开发', eyebrow: '2D PIXEL / NARRATIVE / GODOT',
+    tagline: '在像素校园里，探索生活的另一种可能。',
+    note: '独立开发 · 玩法原型 · AI 辅助创作',
+  },
+  'wuxing-moling': {
+    image: import.meta.env.BASE_URL + 'art/wuxing-world.svg',
+    alt: '远山、灵兽与五行法阵组成的幻想山水主题插画',
+    title: '五行', accent: '墨灵',
+    category: '游戏创作大赛', eyebrow: 'FANTASY / TURN-BASED / RPG',
+    tagline: '在山水与灵兽之间，构建一场五行冒险。',
+    note: '系统策划 · 团队协作 · RPG',
+  },
+  'yanyun-shop': {
+    image: import.meta.env.BASE_URL + 'art/yanyun-world.svg',
+    alt: '水岸楼阁、商铺与灯笼组成的武侠集市主题插画',
+    title: '燕云十六声', accent: '商城系统',
+    category: '系统策划练习', eyebrow: 'SYSTEM DESIGN / COMMERCE / UX',
+    tagline: '从一间江湖商铺，拆解完整的交易体验。',
+    note: '系统框架 · 交互流程 · 商业化',
+  },
+  'brawl-stars': {
+    image: import.meta.env.BASE_URL + 'art/arena-world.svg',
+    alt: '沙漠竞技场、能量宝石与成长阶梯组成的主题插画',
+    title: '荒野乱斗', accent: '角色养成',
+    category: '系统拆解研究', eyebrow: 'PROGRESSION / ECONOMY / BALANCE',
+    tagline: '把每一次成长，拆解为清晰的系统逻辑。',
+    note: '养成循环 · 数值分析 · 资源效率',
+  },
+}
