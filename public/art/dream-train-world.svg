@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 800" fill="none">
+<defs>
+  <linearGradient id="sky" x2="0" y2="800" gradientUnits="userSpaceOnUse"><stop stop-color="#323e64"/><stop offset=".56" stop-color="#7c829b"/><stop offset="1" stop-color="#252f4a"/></linearGradient>
+  <linearGradient id="rail" x1="650" y1="290" x2="420" y2="800" gradientUnits="userSpaceOnUse"><stop stop-color="#b5b9ca"/><stop offset="1" stop-color="#46536e"/></linearGradient>
+  <g id="cloud"><ellipse cx="0" cy="9" rx="39" ry="17"/><circle cx="-18" cy="1" r="19"/><circle cx="9" cy="-8" r="25"/><circle cx="29" cy="6" r="16"/></g>
+  <g id="lamp"><path d="M0 0v112" stroke="#29344d" stroke-width="7"/><path d="M-15 0h30l-5-24h-20z" fill="#e9d5a4"/><path d="M-19 1h38" stroke="#48516a" stroke-width="5"/></g>
+</defs>
+<path fill="url(#sky)" d="M0 0h960v800H0z"/>
+<circle cx="738" cy="151" r="83" fill="#dfdbc8"/>
+<circle cx="738" cy="151" r="104" stroke="#dcdfed" stroke-opacity=".15"/>
+<g fill="#d8d7dd" opacity=".7"><circle cx="76" cy="137" r="2"/><circle cx="194" cy="75" r="3"/><circle cx="346" cy="119" r="2"/><circle cx="496" cy="60" r="2"/><circle cx="592" cy="170" r="2"/><circle cx="866" cy="86" r="2"/><circle cx="881" cy="258" r="3"/><path d="m405 57 3 9 9 3-9 3-3 9-3-9-9-3 9-3z"/></g>
+<g fill="#c9c6d2" opacity=".22"><path d="M12 208h110v-14h88v14h61v13H12zM410 128h73v-13h64v13h47v12H410zM756 289h126v-14h78v30H756z"/></g>
+<path d="M0 335 100 269 188 312 292 222 393 315 498 257 594 333 706 260 825 351 960 292v508H0z" fill="#626c86"/>
+<path d="m0 405 162-70 148 74 148-49 144 54 165-66 193 70v382H0z" fill="#4b5872"/>
+<path d="M0 490 173 422 297 467 475 402 639 485 790 429 960 480v320H0z" fill="#34455f"/>
+<!-- Floating platforms and converging tracks. -->
+<path d="m558 331 234-53 113 57-238 64z" fill="#9b9eab"/><path d="m558 331 109 68 238-64v25l-238 66-109-68z" fill="#5a647c"/>
+<path d="m0 659 369-119 396 220-101 40H0z" fill="#6d7788"/><path d="m0 680 370-117 393 222-45 15H0z" fill="#414f68"/>
+<path d="M122 800 643 350M255 800 687 354M901 800 742 373M960 725 772 366" stroke="#283a53" stroke-width="24"/>
+<path d="M122 800 643 350M255 800 687 354M901 800 742 373M960 725 772 366" stroke="url(#rail)" stroke-width="5"/>
+<g stroke="#8b95aa" stroke-width="5"><path d="m611 382 58 10M572 414l71 17M529 452l83 22M486 490l92 28M438 533l105 34M382 581l117 41M319 636l128 49M249 698l143 56M177 760l151 62M748 409l51-12M761 453l57-14M777 505l68-17M794 563l78-22M816 634l89-28M843 716l102-33"/></g>
+<!-- A quiet midnight train: indigo body and warm windows. -->
+<path d="m339 328 264-61 118 63-269 73z" fill="#aeb5c5"/>
+<path d="m339 328 113 75v144l-113-79z" fill="#52667b"/>
+<path d="m452 403 269-73v139l-269 78z" fill="#354b66"/>
+<path d="m452 469 269-76v13l-269 78z" fill="#c6ba99"/>
+<path d="m339 415 113 77v12l-113-77z" fill="#c6ba99"/>
+<path d="m357 352 75 49v53l-75-50z" fill="#d9d4b6"/>
+<path d="m393 376 1 53" stroke="#55667a" stroke-width="5"/>
+<g fill="#e1d5ab"><path d="m478 414 43-12v41l-43 12zM540 397l43-12v41l-43 12zM602 380l43-12v41l-43 12zM664 363l34-9v41l-34 9z"/></g>
+<path d="m476 492 41-12v50l-41 12z" fill="#243b54"/>
+<path d="m539 475 43-12v50l-43 12zM603 457l43-12v50l-43 12zM665 439l34-9v50l-34 9z" fill="#2c415b"/>
+<g fill="#1c2d44"><ellipse cx="493" cy="548" rx="15" ry="19"/><ellipse cx="674" cy="496" rx="14" ry="18"/><ellipse cx="380" cy="498" rx="13" ry="19"/></g>
+<path d="m349 441 18 12v15l-18-12zM412 485l18 12v15l-18-12z" fill="#f1d89d"/>
+<path d="m350 458-161 102 204 9 35-57z" fill="#e7d29b" opacity=".09"/>
+<!-- Station clock and three destinations. -->
+<path d="M818 244v112M781 259h74" stroke="#344059" stroke-width="7"/>
+<circle cx="818" cy="219" r="28" fill="#c4c8cb" stroke="#4f5c76" stroke-width="6"/>
+<path d="M818 201v19l-12 8" stroke="#4f5c76" stroke-width="4"/>
+<path d="m748 319 32-9v16l-32 9z" fill="#c495a5"/><path d="m789 308 32-9v16l-32 9z" fill="#d8c692"/><path d="m830 297 32-9v16l-32 9z" fill="#8ebccc"/>
+<use href="#cloud" transform="translate(228 368)" fill="#c795ab"/>
+<use href="#cloud" transform="translate(564 240) scale(.75)" fill="#dfcd99"/>
+<use href="#cloud" transform="translate(801 470) scale(.85)" fill="#9cc3d1"/>
+<g fill="#f0e4c6" opacity=".7"><circle cx="220" cy="367" r="2"/><circle cx="238" cy="367" r="2"/><circle cx="559" cy="239" r="2"/><circle cx="572" cy="239" r="2"/><circle cx="795" cy="469" r="2"/><circle cx="810" cy="469" r="2"/></g>
+<use href="#lamp" transform="translate(153 532)"/><use href="#lamp" transform="translate(613 638) scale(.8)"/>
+<g fill="#263b53"><path d="m0 744 133-81 137 137H0zM701 800l156-169 103 65v104z"/></g>
+</svg>

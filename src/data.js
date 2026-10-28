@@ -15,7 +15,7 @@ export const profile = {
   ],
   stats: [
     { value: '6000h+', label: '累计游戏时长' },
-    { value: '4+', label: '系统策划 / 独立项目' },
+    { value: '5+', label: '系统策划 / 独立项目' },
     { value: 'AI', label: 'Agent 辅助开发工作流' }
   ],
   tags: [
@@ -55,8 +55,26 @@ export const projects = [
     }
   },
   {
-    id: 'wuxing-moling',
+    id: 'last-train-of-dreams',
     index: '02',
+    title: '梦的末班车',
+    subtitle: 'TapTap 聚光灯 Game Jam · 2.5D 策略模拟经营',
+    role: '程序 / 策划',
+    date: 'GAME JAM',
+    theme: 'dream',
+    coverCode: 'DREAM',
+    summary:
+      '以“涌现”为主题的团队参赛作品。玩家化身梦境管理局新人，通过分配行动点与布置路标，引导红、黄、蓝三色记忆云团抵达对应站台，在规则交织的梦境铁路中探索记忆与自我。',
+    points: ['AP 分配与路标引导', '简单规则交织出的连锁反应', '记忆碎片与梦境叙事'],
+    tags: ['Game Jam', 'TapTap', '策略模拟', '涌现'],
+    link: {
+      label: '前往 TapTap',
+      href: 'https://www.taptap.cn/app/956025?utm_medium=share&utm_source=qrcode&share_id=1FF3EDD8BADC'
+    }
+  },
+  {
+    id: 'wuxing-moling',
+    index: '03',
     title: '五行墨灵',
     subtitle: '腾讯游戏创作大赛 · 回合捕捉 RPG',
     role: '策划',
@@ -74,7 +92,7 @@ export const projects = [
   },
   {
     id: 'yanyun-shop',
-    index: '03',
+    index: '04',
     title: '燕云十六声 · 商城系统策划案',
     subtitle: '商城结构 / 商品交互 / 付费功能拆解',
     role: '系统策划',
@@ -92,7 +110,7 @@ export const projects = [
   },
   {
     id: 'brawl-stars',
-    index: '04',
+    index: '05',
     title: '荒野乱斗 · 角色养成系统拆解案',
     subtitle: '养成循环 / 资源消耗 / 付费转化分析',
     role: '系统策划',

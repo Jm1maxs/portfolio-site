@@ -32,6 +32,7 @@ section[id], article[id] { scroll-margin-top: 104px; }
 .theme-violet { --p-accent: #d2bfdf; --p-shadow: #1c1729; }
 .theme-cyan { --p-accent: #b3d7ce; --p-shadow: #0d2424; }
 .theme-amber { --p-accent: #e7ce93; --p-shadow: #2a2014; }
+.theme-dream { --p-accent: #c3c6ef; --p-shadow: #161d35; }
 
 /* A quiet, persistent navigation */
 .nav { position: fixed; inset: 0 0 auto; z-index: 50; height: 88px; padding-inline: var(--gutter); display: flex; align-items: center; justify-content: space-between; gap: 24px; border-bottom: 1px solid #b8cfac12; background: #0a1211e8; backdrop-filter: blur(18px); transition: height .25s, background .25s; }
@@ -69,7 +70,7 @@ section[id], article[id] { scroll-margin-top: 104px; }
 .section-intro .section-heading { margin-bottom: 0; }
 .section-intro > p { margin: 0 0 3px; color: var(--dim); font-size: 13px; line-height: 1.9; }
 
-/* Four illustrated project worlds */
+/* Illustrated project worlds */
 .projects { border-top: 1px solid var(--line); background: linear-gradient(180deg, #0c1613, #0a1211); }
 .projects__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 66px 30px; align-items: start; }
 .project-story { min-width: 0; }
@@ -163,14 +164,21 @@ section[id], article[id] { scroll-margin-top: 104px; }
 .project-dock { margin-bottom: 4px; }
 .project-dock__item { border-radius: 5px; }
 .project-dock__text small { line-height: 1.6; }
+.project-dock { grid-template-columns: 1fr; gap: 16px; }
+.project-dock__heading { display: flex; justify-content: space-between; align-items: center; }
+.project-dock__heading strong { margin-top: 0; }
+.project-dock__items { grid-template-columns: repeat(5, minmax(0, 1fr)); }
 
 @media (max-width: 1100px) {
+  .project-dock__items { grid-template-columns: repeat(3, minmax(0, 1fr)); }
   .strengths__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .about__grid { gap: 36px; grid-template-columns: .85fr 1.15fr; }
   .project-cover { min-height: 420px; }
   .project-story__meta { flex-direction: column; gap: 5px; }
 }
 @media (max-width: 820px) {
+  .project-dock__items { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .project-dock__item:last-child:nth-child(odd) { grid-column: 1 / -1; }
   .nav { height: 76px; gap: 14px; }
   .nav__toggle { display: block; margin-left: auto; padding: 10px; background: transparent; color: var(--text); border: 0; font-size: 12px; cursor: pointer; }
   .nav__links { display: none; position: absolute; inset: 100% 0 auto; padding: 14px var(--gutter) 22px; border-bottom: 1px solid var(--line-strong); background: #102019; grid-template-columns: repeat(2, 1fr); gap: 8px 25px; }

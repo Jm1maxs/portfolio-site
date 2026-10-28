@@ -28,7 +28,7 @@ export default function Hero({ atmosphereEnabled, onToggleAtmosphere }) {
                 <button className="effects-toggle" type="button" aria-pressed={atmosphereEnabled} onClick={onToggleAtmosphere}>
                   <span aria-hidden="true">✦</span> 动态氛围 <span aria-hidden="true">{atmosphereEnabled ? '开' : '关'}</span>
                 </button>
-                <span>01 / 04</span>
+                <span>01 / {String(projects.length).padStart(2, '0')}</span>
               </div>
             </div>
             <div className="world-portal">

@@ -1,4 +1,12 @@
 export const projectVisuals = {
+  'last-train-of-dreams': {
+    image: import.meta.env.BASE_URL + 'art/dream-train-world.svg',
+    alt: '梦境列车主题插画：星夜中的列车、交错铁轨与三色记忆云团',
+    title: '梦的', accent: '末班车',
+    category: 'TapTap 聚光灯 Game Jam', eyebrow: 'DREAM / STRATEGY / EMERGENCE',
+    tagline: '让散落的记忆，在梦境的站台重逢。',
+    note: '团队作品 · 策略模拟 · 梦境叙事',
+  },
   'campus-life': {
     image: import.meta.env.BASE_URL + 'art/campus-world.svg',
     alt: '暮色校园、教学楼与像素角色的主题插画',
