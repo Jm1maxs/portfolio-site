@@ -1,7 +1,8 @@
 import SectionHeading from './SectionHeading.jsx'
+import CountUp from './CountUp.jsx'
 import { profile } from '../data.js'
 
-export default function About() {
+export default function About({ motionEnabled }) {
   return (
     <section className="about section" id="about">
       <div className="page-width">
@@ -29,7 +30,7 @@ export default function About() {
               <div><dt>创作工具</dt><dd>Unity / Godot · Axure / XMind · AI Agent</dd></div>
             </dl>
             <div className="about__stats">
-              {profile.stats.map((stat) => <div key={stat.label}><strong>{stat.value}</strong><span>{stat.label}</span></div>)}
+              {profile.stats.map((stat) => <div key={stat.label}><CountUp value={stat.value} enabled={motionEnabled} /><span>{stat.label}</span></div>)}
             </div>
             <div className="about__tags">{profile.tags.map((tag) => <span className="tag" key={tag}>{tag}</span>)}</div>
           </div>

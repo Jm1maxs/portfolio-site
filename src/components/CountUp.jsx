@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-export default function CountUp({ value, duration = 1800 }) {
+export default function CountUp({ value, enabled, duration = 1600 }) {
   const ref = useRef(null)
   const [display, setDisplay] = useState(value)
 
@@ -9,7 +9,7 @@ export default function CountUp({ value, duration = 1800 }) {
     if (!node) return undefined
 
     const match = String(value).match(/^(\d+(?:\.\d+)?)(.*)$/)
-    if (!match) {
+    if (!match || !enabled || !window.IntersectionObserver) {
       setDisplay(value)
       return undefined
     }
@@ -17,6 +17,7 @@ export default function CountUp({ value, duration = 1800 }) {
     const target = parseFloat(match[1])
     const suffix = match[2] || ''
     const decimals = match[1].includes('.') ? match[1].split('.')[1].length : 0
+    setDisplay((0).toFixed(decimals) + suffix)
     let frame = 0
     let observer
 
@@ -46,7 +47,7 @@ export default function CountUp({ value, duration = 1800 }) {
       observer.disconnect()
       cancelAnimationFrame(frame)
     }
-  }, [duration, value])
+  }, [duration, value, enabled])
 
-  return <strong ref={ref}>{display}</strong>
+  return <strong ref={ref} aria-label={value}>{display}</strong>
 }
