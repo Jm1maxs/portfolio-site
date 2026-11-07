@@ -32,6 +32,7 @@ export default function ProjectCard({ project }) {
         <div className="project-story__meta"><span>{project.role}</span><span>{visual.note}</span></div>
         <h4>{project.subtitle}</h4>
         <p className="project-story__summary">{project.summary}</p>
+        {project.feedback && <p className="project-story__summary"><strong>玩家反馈</strong> · {project.feedback}</p>}
         <ul className="project-story__points">
           {project.points.map((point) => <li key={point}>{point}</li>)}
         </ul>
