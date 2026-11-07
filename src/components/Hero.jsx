@@ -16,6 +16,7 @@ export default function Hero({ atmosphereEnabled, onToggleAtmosphere, motionEnab
             <p className="showcase__description">用系统构建体验，用原型验证想法。<br />探索叙事、玩法与 AI 辅助创作的更多可能。</p>
             <div className="showcase__actions">
               <a className="btn btn--solid" href="#projects"><span>探索我的作品</span><span aria-hidden="true">↗</span></a>
+              <a className="btn btn--ghost" href="./game-experience.html">游戏经历 <span aria-hidden="true">↗</span></a>
               <a className="showcase__contact" href="#contact">联系我 <span aria-hidden="true">↗</span></a>
             </div>
             <div className="showcase__skills" aria-label="创作方向"><span>系统设计</span><span>玩法原型</span><span>AI 工作流</span></div>

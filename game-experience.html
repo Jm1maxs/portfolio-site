@@ -19,11 +19,11 @@
         <h1>游戏经历</h1>
         <p>记录了 <strong>36</strong> 项游戏经历，共 <strong>6,660</strong> 小时。</p>
       </div>
-      <nav class="log-nav" aria-label="按平台查看">
-        <a href="#cross-platform">跨平台</a>
-        <a href="#desktop">PC / 主机</a>
-        <a href="#mobile">移动端</a>
-      </nav>
+      <div class="log-filter" hidden>
+        <label for="genre">游戏类型</label>
+        <select id="genre"><option value="">全部类型</option></select>
+        <span class="log-count" role="status"></span>
+      </div>
     <section class="log-section" id="cross-platform" aria-labelledby="cross-platform-title">
       <h2 id="cross-platform-title">跨平台</h2>
       <table aria-labelledby="cross-platform-title">
@@ -80,11 +80,12 @@
           <tr><th scope="row">王者荣耀<small>MOBA</small></th><td>500 h</td><td>多个赛季达到王者段位</td></tr>
           <tr><th scope="row">塔塔冒险队</th><td>150 h</td><td>达到 180 级</td></tr>
           <tr><th scope="row">假日消消乐<small>休闲</small></th><td>50 h</td><td>推进至 200 关</td></tr>
-          <tr><th scope="row">开心消消乐</th><td>50 h</td><td>—</td></tr>
+          <tr><th scope="row">开心消消乐<small>休闲</small></th><td>50 h</td><td>—</td></tr>
         </tbody>
       </table>
     </section>
       <footer class="log-footer"><a href="./#about">← 返回个人经历</a></footer>
     </main>
+    <script type="module" src="./src/game-experience.js"></script>
   </body>
 </html>

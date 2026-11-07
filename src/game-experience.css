@@ -7,9 +7,19 @@
 .log-intro h1 { margin: 0; font-size: clamp(34px, 5vw, 62px); line-height: 1.2; }
 .log-intro p { margin: 18px 0 0; color: var(--text); }
 .log-intro strong { color: var(--accent); font-variant-numeric: tabular-nums; }
-.log-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
-.log-nav a { padding: 6px 16px; border-radius: 20px; border: 1px solid var(--line-strong); color: var(--muted); font-size: 13px; }
-.log-nav a:hover { color: var(--accent); border-color: var(--accent); }
+.log-filter:not([hidden]) { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; margin-top: 24px; padding-bottom: 18px; border-bottom: 1px solid var(--line); }
+.log-filter label { color: var(--text); font-weight: 500; }
+.log-filter select { color-scheme: dark; padding: 9px 14px; font: inherit; color: var(--accent); background: var(--panel); border: 1px solid var(--line-strong); border-radius: 6px; cursor: pointer; }
+.log-filter select:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.log-count { margin-left: auto; color: var(--muted); font-size: 13px; font-variant-numeric: tabular-nums; }
+@media (prefers-reduced-motion: no-preference) {
+  .log-intro { animation: log-arrive .55s ease-out; }
+  .log-section tbody tr { transition: background-color .18s ease-out; }
+  @keyframes log-arrive { from { opacity: .4; transform: translateY(10px); } }
+}
+@media (hover: hover) {
+  .log-section tbody tr:hover { background-color: var(--panel); }
+}
 .game-log .log-section { margin-top: 48px; scroll-margin-top: 0; }
 .log-section h2 { font-size: 24px; margin: 0 0 16px; }
 .log-section table { border-collapse: collapse; table-layout: fixed; width: 100%; font-size: 14px; }

@@ -11,7 +11,7 @@
 .showcase__role { display: flex; align-items: center; gap: 16px; margin: 27px 0 14px; color: #dce3dd; font-size: 16px; letter-spacing: .12em; }
 .showcase__role > span { color: #91a57d; font-size: 13px; }
 .showcase__description { margin: 0; color: #95a7a3; font-size: 14px; line-height: 1.95; }
-.showcase__actions { display: flex; align-items: center; gap: 28px; margin-top: 32px; }
+.showcase__actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px 16px; margin-top: 32px; }
 .showcase .btn--solid { gap: 26px; min-height: 50px; padding-inline: 22px; border-color: #c3ed9c; border-radius: 5px; background: #c3ed9c; color: #16251c; }
 .showcase .btn--solid:hover { background: #d6fbb7; border-color: #d6fbb7; }
 .showcase__contact { padding: 12px 0; color: #c7d1cb; font-size: 13px; }
