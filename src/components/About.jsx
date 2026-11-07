@@ -30,7 +30,13 @@ export default function About({ motionEnabled }) {
               <div><dt>创作工具</dt><dd>Unity / Godot · Axure / XMind · AI Agent</dd></div>
             </dl>
             <div className="about__stats">
-              {profile.stats.map((stat) => <div key={stat.label}><CountUp value={stat.value} enabled={motionEnabled} /><span>{stat.label}</span></div>)}
+              {profile.stats.map((stat) => (
+                <div key={stat.label}>
+                  <CountUp value={stat.value} enabled={motionEnabled} />
+                  <span>{stat.label}</span>
+                  {stat.href && <a className="about__experience-link" href={stat.href}>查看游戏经历 <b aria-hidden="true">↗</b></a>}
+                </div>
+              ))}
             </div>
             <div className="about__tags">{profile.tags.map((tag) => <span className="tag" key={tag}>{tag}</span>)}</div>
           </div>

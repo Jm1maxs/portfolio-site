@@ -1,0 +1,29 @@
+@import './styles.css';
+
+.log-header, .log-main { width: min(100% - 2 * var(--gutter), 1024px); margin-inline: auto; }
+.log-header { display: flex; align-items: center; justify-content: space-between; min-height: 76px; border-bottom: 1px solid var(--line); font-size: 13px; }
+.log-header a:hover, .log-footer a:hover { color: var(--accent); }
+.log-intro { margin-top: clamp(24px, 4vw, 55px); padding: clamp(26px, 5vw, 64px); border: 1px solid var(--line-strong); border-radius: 12px; background: linear-gradient(90deg, #10231dfc, #10231dd4 48%, #10231d60), url('/art/arena-world.svg') center 54% / cover; }
+.log-intro h1 { margin: 0; font-size: clamp(34px, 5vw, 62px); line-height: 1.2; }
+.log-intro p { margin: 18px 0 0; color: var(--text); }
+.log-intro strong { color: var(--accent); font-variant-numeric: tabular-nums; }
+.log-nav { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+.log-nav a { padding: 6px 16px; border-radius: 20px; border: 1px solid var(--line-strong); color: var(--muted); font-size: 13px; }
+.log-nav a:hover { color: var(--accent); border-color: var(--accent); }
+.game-log .log-section { margin-top: 48px; scroll-margin-top: 0; }
+.log-section h2 { font-size: 24px; margin: 0 0 16px; }
+.log-section table { border-collapse: collapse; table-layout: fixed; width: 100%; font-size: 14px; }
+.log-section th, .log-section td { text-align: left; padding: 12px 16px; border-bottom: 1px solid var(--line); overflow-wrap: anywhere; }
+.log-section thead th { background: var(--panel); color: var(--muted); font-size: 12px; font-weight: 500; }
+.log-section thead th:first-child { width: 33%; }
+.log-section thead th:nth-child(2) { width: 15%; }
+.log-section tbody th { font-weight: 500; }
+.log-section small { display: block; color: var(--dim); font-size: 11px; }
+.log-section td:nth-child(2) { white-space: nowrap; color: var(--accent); font-variant-numeric: tabular-nums; }
+.log-section td:last-child { color: var(--muted); }
+.log-footer { padding: 32px 0 48px; color: var(--accent); font-size: 14px; }
+@media (max-width: 600px) {
+  .log-section table { font-size: 13px; }
+  .log-section th, .log-section td { padding: 10px 5px; }
+  .log-section thead th:nth-child(2) { width: 18%; }
+}

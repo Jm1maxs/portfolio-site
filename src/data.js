@@ -14,7 +14,7 @@ export const profile = {
     '累计游戏时长突破 6000 小时，长期保持对玩法、品类与行业趋势的敏感度，并能把体验判断转译成系统策划语言。'
   ],
   stats: [
-    { value: '6000h+', label: '累计游戏时长' },
+    { value: '6000h+', label: '累计游戏时长', href: './game-experience.html' },
     { value: '5+', label: '系统策划 / 独立项目' },
     { value: 'AI', label: 'Agent 辅助开发工作流' }
   ],
