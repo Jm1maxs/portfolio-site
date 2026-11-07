@@ -24,7 +24,7 @@ export default function FeaturedProjects({ atmosphereEnabled, onToggleAtmosphere
     let timer
     const schedule = () => {
       clearTimeout(timer)
-      if (!document.hidden) timer = setTimeout(() => setIndex((i) => (i + 1) % projects.length), 6000)
+      if (!document.hidden) timer = setTimeout(() => setIndex((i) => (i + 1) % projects.length), 4500)
     }
     schedule()
     document.addEventListener('visibilitychange', schedule)
@@ -69,17 +69,11 @@ export default function FeaturedProjects({ atmosphereEnabled, onToggleAtmosphere
           <WorldAtmosphere />
         </a>
       </div>
-      <div className="showcase__feature-foot">
-        <div className="featured-picker" role="group" aria-label="选择作品">
-          {projects.map((project, i) => (
-            <button type="button" key={project.id} aria-label={project.title} title={project.title} aria-pressed={i === index}
-              onClick={() => { setIndex(i); setPaused(true) }} />
-          ))}
-        </div>
-        {motionEnabled && <button type="button" className="featured-playback" onClick={() => setPaused(!paused)}>
+      {motionEnabled && <div className="showcase__feature-foot">
+        <button type="button" className="featured-playback" onClick={() => setPaused(!paused)}>
           {paused ? '▶ 继续轮播' : 'Ⅱ 暂停轮播'}
-        </button>}
-      </div>
+        </button>
+      </div>}
     </section>
   )
 }
