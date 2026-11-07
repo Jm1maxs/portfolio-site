@@ -1,5 +1,5 @@
 const filter = document.querySelector('.log-filter')
-const select = filter.querySelector('select')
+const pills = filter.querySelector('.genre-pills')
 const count = filter.querySelector('[role="status"]')
 const sections = [...document.querySelectorAll('.log-section')]
 const games = [...document.querySelectorAll('.log-section tbody tr')].map(row => ({
@@ -8,16 +8,34 @@ const games = [...document.querySelectorAll('.log-section tbody tr')].map(row =>
   hours: parseInt(row.cells[1].textContent, 10),
 }))
 
-for (const genre of new Set(games.map(game => game.genre))) {
-  select.add(new Option(genre, genre))
+for (const genre of ['', ...new Set(games.map(game => game.genre))]) {
+  const button = document.createElement('button')
+  button.type = 'button'
+  button.textContent = genre || '全部类型'
+  button.setAttribute('aria-pressed', String(!genre))
+  button.addEventListener('click', () => {
+    if (button.getAttribute('aria-pressed') === 'true') return
+    pills.querySelector('[aria-pressed="true"]').setAttribute('aria-pressed', 'false')
+    button.setAttribute('aria-pressed', 'true')
+    showMatches(genre, true)
+  })
+  pills.append(button)
 }
 
-function showMatches() {
+function showMatches(genre, animate = false) {
+  const reveal = animate && !window.matchMedia('(prefers-reduced-motion: reduce)').matches
   let matches = 0
   let hours = 0
   for (const game of games) {
-    game.row.hidden = Boolean(select.value && game.genre !== select.value)
+    game.row.hidden = Boolean(genre && game.genre !== genre)
     if (!game.row.hidden) {
+      if (reveal) {
+        game.row.getAnimations().forEach(animation => animation.cancel())
+        game.row.animate([
+          { opacity: 0.25, transform: 'translateY(7px)' },
+          { opacity: 1, transform: 'translateY(0)' },
+        ], { duration: 300, delay: Math.min(matches, 6) * 24, easing: 'ease-out', fill: 'backwards' })
+      }
       matches++
       hours += game.hours
     }
@@ -28,12 +46,5 @@ function showMatches() {
   count.textContent = matches + ' 项经历 · ' + hours.toLocaleString('zh-CN') + ' 小时'
 }
 
-select.addEventListener('change', () => {
-  showMatches()
-  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
-  for (const section of sections.filter(section => !section.hidden)) {
-    section.animate?.([{opacity: 0.3, transform: 'translateY(6px)'}, {opacity: 1, transform: 'none'}], {duration: 240, easing: 'ease-out'})
-  }
-})
-showMatches()
+showMatches('')
 filter.hidden = false
