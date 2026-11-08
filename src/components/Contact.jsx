@@ -19,7 +19,7 @@ export default function Contact() {
           <div className="contact__inner">
             <p className="small-label">04 / START A CONVERSATION</p>
             <h2>下一个世界，<br /><em>一起创造。</em></h2>
-            <p className="contact__text">如果你正在寻找一名懂系统、能验证、拥抱 AI 工作流的系统策划，<br className="desktop-break" />欢迎聊聊游戏、想法与新的可能。</p>
+            <p className="contact__text">感谢浏览，欢迎您与我联系！</p>
             <div className="contact__actions">
               <button type="button" className="btn btn--solid" onClick={copyEmail} title="复制联系邮箱">
                 <span>联系我</span><span aria-hidden="true">⧉</span>
