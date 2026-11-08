@@ -17,13 +17,13 @@
   .showcase__ambient::before, .showcase__ambient::after {
     content: ''; position: absolute; pointer-events: none;
     width: 85%; height: 80%; right: -15%; top: -22%; border-radius: 50%;
-    background: radial-gradient(ellipse at center, #92c9711f, #448f7824 35%, transparent 68%);
+    background: radial-gradient(ellipse at center, color-mix(in srgb, var(--p-accent) 14%, transparent), transparent 68%);
     transform-origin: 70% 45%;
     animation: aurora-drift 18s ease-in-out infinite alternate paused;
   }
   .showcase__ambient::after {
     right: 20%; top: 18%; width: 70%; height: 90%; opacity: .5;
-    background: radial-gradient(ellipse at center, #7cb29c25, transparent 66%);
+    background: radial-gradient(ellipse at center, color-mix(in srgb, var(--p-accent) 12%, transparent), transparent 66%);
     animation-delay: -9s; animation-duration: 23s;
   }
   .showcase__ambient.is-in-view::before, .showcase__ambient.is-in-view::after { animation-play-state: running; }

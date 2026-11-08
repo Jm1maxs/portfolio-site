@@ -1,5 +1,15 @@
 .showcase { position: relative; isolation: isolate; overflow: hidden; padding: 134px 0 38px; background: #080e13; }
 .showcase__ambient { position: absolute; inset: 0; z-index: -1; background: radial-gradient(ellipse at 82% 34%, #27534a40, transparent 52%), radial-gradient(ellipse at 0 70%, #142e3c38, transparent 45%); }
+.showcase .showcase__ambient {
+  pointer-events: none;
+  background: radial-gradient(ellipse at 82% 36%, color-mix(in srgb, var(--p-accent) 22%, transparent), transparent 65%), linear-gradient(var(--p-shadow), transparent 95%);
+  opacity: 0;
+  transition: opacity .9s ease-in-out;
+}
+.showcase .showcase__ambient[data-active="true"] { opacity: 1; }
+.showcase .showcase__ambient[data-active="false"]::before,
+.showcase .showcase__ambient[data-active="false"]::after { animation-play-state: paused; }
+.effects-paused .showcase .showcase__ambient { transition: none; }
 .showcase__layout { display: grid; grid-template-columns: 0.9fr 1.1fr; align-items: center; gap: clamp(32px, 5vw, 90px); }
 .showcase__intro { min-width: 0; padding: 30px 0; }
 .showcase__eyebrow { display: flex; align-items: center; gap: 10px; margin: 0 0 38px; color: #a0b8af; font: 10px "Space Grotesk", sans-serif; letter-spacing: .17em; }

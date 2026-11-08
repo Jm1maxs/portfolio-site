@@ -3,8 +3,7 @@ import { projects } from '../data.js'
 import { projectVisuals } from '../projectVisuals.js'
 import WorldAtmosphere from './WorldAtmosphere.jsx'
 
-export default function FeaturedProjects({ atmosphereEnabled, onToggleAtmosphere, motionEnabled }) {
-  const [index, setIndex] = useState(0)
+export default function FeaturedProjects({ index, setIndex, atmosphereEnabled, onToggleAtmosphere, motionEnabled }) {
   const [paused, setPaused] = useState(false)
   const [hovered, setHovered] = useState(false)
   const [focused, setFocused] = useState(false)
@@ -24,7 +23,7 @@ export default function FeaturedProjects({ atmosphereEnabled, onToggleAtmosphere
     let timer
     const schedule = () => {
       clearTimeout(timer)
-      if (!document.hidden) timer = setTimeout(() => setIndex((i) => (i + 1) % projects.length), 4500)
+      if (!document.hidden) timer = setTimeout(() => setIndex((i) => (i + 1) % projects.length), 3000)
     }
     schedule()
     document.addEventListener('visibilitychange', schedule)
@@ -32,7 +31,7 @@ export default function FeaturedProjects({ atmosphereEnabled, onToggleAtmosphere
       clearTimeout(timer)
       document.removeEventListener('visibilitychange', schedule)
     }
-  }, [index, motionEnabled, paused, hovered, focused, inView])
+  }, [index, setIndex, motionEnabled, paused, hovered, focused, inView])
 
   return (
     <section className="showcase__feature" aria-label="精选作品轮播" ref={panel}>

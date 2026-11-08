@@ -1,11 +1,16 @@
+import { useState } from 'react'
 import { profile, projects } from '../data.js'
 import '../hero-showcase.css'
 import FeaturedProjects from './FeaturedProjects.jsx'
 
 export default function Hero({ atmosphereEnabled, onToggleAtmosphere, motionEnabled }) {
+  const [featuredIndex, setFeaturedIndex] = useState(0)
   return (
     <section className="showcase" id="top" aria-labelledby="showcase-title">
-      <div className="showcase__ambient" data-atmosphere aria-hidden="true" />
+      {projects.map((project, index) => (
+        <div key={project.id} className={'showcase__ambient theme-' + project.theme}
+          data-active={index === featuredIndex} data-atmosphere aria-hidden="true" />
+      ))}
       <div className="page-width">
         <div className="showcase__layout">
           <div className="showcase__intro">
@@ -21,7 +26,7 @@ export default function Hero({ atmosphereEnabled, onToggleAtmosphere, motionEnab
             </div>
             <div className="showcase__skills" aria-label="创作方向"><span>系统设计</span><span>玩法原型</span><span>AI 工作流</span></div>
           </div>
-          <FeaturedProjects atmosphereEnabled={atmosphereEnabled} motionEnabled={motionEnabled} onToggleAtmosphere={onToggleAtmosphere} />
+          <FeaturedProjects index={featuredIndex} setIndex={setFeaturedIndex} atmosphereEnabled={atmosphereEnabled} motionEnabled={motionEnabled} onToggleAtmosphere={onToggleAtmosphere} />
         </div>
         <nav className="project-dock" aria-label="作品快捷入口">
           <div className="project-dock__heading"><span>SELECTED WORKS</span><strong>进入我的游戏世界 <span aria-hidden="true">↓</span></strong></div>
