@@ -24,7 +24,7 @@
   .nav__links a:is(:hover, :focus-visible, .is-active)::after { transform: scaleX(1); }
   .nav__brand-mark, .nav__cta > span, .showcase__contact > span,
   .project-dock__arrow, .btn > span:last-child,
-  .project-cover__cta > span, .world-card__play > span:last-child {
+  .project-cover__cta > span {
     display: inline-block;
     transition: transform .3s var(--ease);
   }
@@ -33,7 +33,7 @@
   .project-cover, .world-card { transition: border-color .4s, box-shadow .4s; }
   .project-cover > img, .world-card__art { transition: transform .75s var(--ease); }
   .project-cover__caption, .world-card__caption { transition: transform .5s var(--ease); }
-  .project-cover__cta i, .world-card__play > span:first-child {
+  .project-cover__cta i, .world-card__icon {
     transition: background .3s, color .3s, border-color .3s, transform .3s var(--ease);
   }
   .strength-card__top svg { transition: transform .4s var(--ease); }
@@ -52,8 +52,7 @@
   .project-cover:focus-visible, .world-card:focus-visible {
     box-shadow: 0 0 0 4px #c3e6a214;
   }
-  .project-cover:focus-visible .project-cover__cta > span,
-  .world-card:focus-visible .world-card__play > span:last-child { transform: translate(3px, -3px); }
+  .project-cover:focus-visible .project-cover__cta > span { transform: translate(3px, -3px); }
 
   @media (hover: hover) and (pointer: fine) {
     .project-cover.is-exploring > img,
@@ -63,9 +62,8 @@
     .project-cover.is-exploring::after, .world-card.is-exploring::after { opacity: 1; }
     .project-cover:hover, .world-card:hover { box-shadow: 0 16px 38px #0002; }
     .project-cover:hover .project-cover__caption, .world-card:hover .world-card__caption { transform: translateY(-4px); }
-    .project-cover:hover .project-cover__cta i, .world-card:hover .world-card__play > span:first-child { transform: scale(1.07); }
+    .project-cover:hover .project-cover__cta i, .world-card:hover .world-card__icon { transform: scale(1.07); }
     .project-cover:hover .project-cover__cta > span,
-    .world-card:hover .world-card__play > span:last-child,
     .nav__cta:hover > span, .showcase__contact:hover > span,
     .btn:hover > span:last-child, .project-dock__item:hover .project-dock__arrow { transform: translate(3px, -3px); }
     .project-dock__item:hover { transform: translateY(-3px); }

@@ -61,7 +61,7 @@ export default function FeaturedProjects({ atmosphereEnabled, onToggleAtmosphere
                   <span className="world-card__genre">{visual.eyebrow}</span>
                   <h2>{visual.title}<br /><em>{visual.accent}</em></h2>
                   <p>{visual.tagline}</p>
-                  <span className="world-card__play"><span aria-hidden="true">{project.link.label === '观看演示' ? '▶' : '↗'}</span>{project.link.label}</span>
+                  <span className="world-card__play"><span className="world-card__icon" aria-hidden="true">{project.link.label === '观看演示' ? '▶' : '↗'}</span>{project.link.label}</span>
                 </div>
               </div>
             )

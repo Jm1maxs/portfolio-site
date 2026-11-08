@@ -43,8 +43,8 @@
 .world-card h2 em { font-style: normal; color: #d1f0a8; }
 .world-card__caption p { margin: 12px 0 18px; color: #bcc9b7; font-size: 12px; }
 .world-card__play { display: inline-flex; align-items: center; gap: 12px; color: #e5f2d0; font-size: 11px; }
-.world-card__play > span:first-child { display: grid; place-items: center; width: 32px; height: 32px; padding-left: 2px; border: 1px solid #c3ed9c70; border-radius: 50%; font-size: 9px; transition: background .2s; }
-.world-card:hover .world-card__play > span:first-child { background: #c3ed9c; color: #10231c; }
+.world-card__icon { display: grid; place-items: center; flex: 0 0 32px; width: 32px; height: 32px; border: 1px solid #c3ed9c70; border-radius: 50%; font-size: 9px; line-height: 1; transition: background .2s; }
+.world-card:hover .world-card__icon { background: #c3ed9c; color: #10231c; }
 .project-dock { display: grid; grid-template-columns: 190px 1fr; align-items: center; gap: 28px; margin-top: 48px; padding-top: 26px; border-top: 1px solid #b6cda322; }
 .project-dock__heading > span { color: #7c9288; font: 9px "Space Grotesk", sans-serif; letter-spacing: .15em; }
 .project-dock__heading strong { display: block; margin-top: 7px; color: #cdd6ce; font-size: 13px; font-weight: 400; }
