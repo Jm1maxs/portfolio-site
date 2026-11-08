@@ -3,8 +3,7 @@ import { projects } from '../data.js'
 import { projectVisuals } from '../projectVisuals.js'
 import WorldAtmosphere from './WorldAtmosphere.jsx'
 
-export default function FeaturedProjects({ index, setIndex, atmosphereEnabled, onToggleAtmosphere, motionEnabled }) {
-  const [paused, setPaused] = useState(false)
+export default function FeaturedProjects({ index, setIndex, motionEnabled }) {
   const [hovered, setHovered] = useState(false)
   const [focused, setFocused] = useState(false)
   const [inView, setInView] = useState(true)
@@ -19,7 +18,7 @@ export default function FeaturedProjects({ index, setIndex, atmosphereEnabled, o
   }, [])
 
   useEffect(() => {
-    if (!motionEnabled || paused || hovered || focused || !inView) return
+    if (!motionEnabled || hovered || focused || !inView) return
     let timer
     const schedule = () => {
       clearTimeout(timer)
@@ -31,18 +30,13 @@ export default function FeaturedProjects({ index, setIndex, atmosphereEnabled, o
       clearTimeout(timer)
       document.removeEventListener('visibilitychange', schedule)
     }
-  }, [index, setIndex, motionEnabled, paused, hovered, focused, inView])
+  }, [index, setIndex, motionEnabled, hovered, focused, inView])
 
   return (
     <section className="showcase__feature" aria-label="精选作品轮播" ref={panel}>
       <div className="showcase__feature-label">
         <span>FEATURED PROJECT</span>
-        <div className="showcase__feature-tools">
-          <button className="effects-toggle" type="button" aria-pressed={atmosphereEnabled} onClick={onToggleAtmosphere}>
-            <span aria-hidden="true">✦</span> 动态氛围 <span aria-hidden="true">{atmosphereEnabled ? '开' : '关'}</span>
-          </button>
-          <span>{current.index} / {String(projects.length).padStart(2, '0')}</span>
-        </div>
+        <span>{current.index} / {String(projects.length).padStart(2, '0')}</span>
       </div>
       <div className="world-portal">
         <a className="world-card" href={current.link.href} target="_blank" rel="noreferrer"
@@ -68,11 +62,6 @@ export default function FeaturedProjects({ index, setIndex, atmosphereEnabled, o
           <WorldAtmosphere />
         </a>
       </div>
-      {motionEnabled && <div className="showcase__feature-foot">
-        <button type="button" className="featured-playback" onClick={() => setPaused(!paused)}>
-          {paused ? '▶ 继续轮播' : 'Ⅱ 暂停轮播'}
-        </button>
-      </div>}
     </section>
   )
 }

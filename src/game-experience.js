@@ -4,7 +4,7 @@ const count = filter.querySelector('[role="status"]')
 const sections = [...document.querySelectorAll('.log-section')]
 const games = [...document.querySelectorAll('.log-section tbody tr')].map(row => ({
   row,
-  genre: row.querySelector('small')?.textContent || '未分类',
+  genres: (row.querySelector('small')?.textContent || '未分类').split(' · '),
   hours: parseInt(row.cells[1].textContent, 10),
 }))
 const motionPreference = window.matchMedia('(prefers-reduced-motion: reduce)')
@@ -39,7 +39,7 @@ document.addEventListener('visibilitychange', () => {
   if (document.hidden) cancelMotion()
 })
 
-for (const genre of ['', ...new Set(games.map(game => game.genre))]) {
+for (const genre of ['', ...new Set(games.flatMap(game => game.genres))]) {
   const button = document.createElement('button')
   button.type = 'button'
   button.textContent = genre || '全部类型'
@@ -59,7 +59,7 @@ function showMatches(genre, animate = false) {
   let matches = 0
   let hours = 0
   for (const game of games) {
-    game.row.hidden = Boolean(genre && game.genre !== genre)
+    game.row.hidden = Boolean(genre && !game.genres.includes(genre))
     if (!game.row.hidden) {
       matches++
       hours += game.hours

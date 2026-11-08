@@ -1,4 +1,4 @@
-import { useEffect, useState, useSyncExternalStore } from 'react'
+import { useEffect, useSyncExternalStore } from 'react'
 import Nav from './components/Nav.jsx'
 import Hero from './components/Hero.jsx'
 import About from './components/About.jsx'
@@ -14,9 +14,8 @@ function subscribeMotion(listener) {
 }
 
 export default function App() {
-  const [atmosphereEnabled, setAtmosphereEnabled] = useState(true)
   const reduced = useSyncExternalStore(subscribeMotion, () => reducedMotion.matches)
-  const motionEnabled = atmosphereEnabled && !reduced
+  const motionEnabled = !reduced
   useSiteMotion()
   useEffect(() => {
     const header = document.querySelector('[data-header]')
@@ -32,10 +31,10 @@ export default function App() {
   }, [])
 
   return (
-    <div className={`site-shell${atmosphereEnabled ? '' : ' effects-paused'}`}>
+    <div className="site-shell">
       <Nav />
       <main>
-        <Hero atmosphereEnabled={atmosphereEnabled} motionEnabled={motionEnabled} onToggleAtmosphere={() => setAtmosphereEnabled((enabled) => !enabled)} />
+        <Hero motionEnabled={motionEnabled} />
         <Projects />
         <About motionEnabled={motionEnabled} />
         <Strengths />

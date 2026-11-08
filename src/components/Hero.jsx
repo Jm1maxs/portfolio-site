@@ -3,7 +3,7 @@ import { profile, projects } from '../data.js'
 import '../hero-showcase.css'
 import FeaturedProjects from './FeaturedProjects.jsx'
 
-export default function Hero({ atmosphereEnabled, onToggleAtmosphere, motionEnabled }) {
+export default function Hero({ motionEnabled }) {
   const [featuredIndex, setFeaturedIndex] = useState(0)
   return (
     <section className="showcase" id="top" aria-labelledby="showcase-title">
@@ -26,7 +26,7 @@ export default function Hero({ atmosphereEnabled, onToggleAtmosphere, motionEnab
             </div>
             <div className="showcase__skills" aria-label="创作方向"><span>系统设计</span><span>玩法原型</span><span>AI 工作流</span></div>
           </div>
-          <FeaturedProjects index={featuredIndex} setIndex={setFeaturedIndex} atmosphereEnabled={atmosphereEnabled} motionEnabled={motionEnabled} onToggleAtmosphere={onToggleAtmosphere} />
+          <FeaturedProjects index={featuredIndex} setIndex={setFeaturedIndex} motionEnabled={motionEnabled} />
         </div>
         <nav className="project-dock" aria-label="作品快捷入口">
           <div className="project-dock__heading"><span>SELECTED WORKS</span><strong>进入我的游戏世界 <span aria-hidden="true">↓</span></strong></div>
